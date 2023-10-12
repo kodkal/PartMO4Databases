@@ -31,5 +31,30 @@ namespace PartMO4Databases
             this.phoneListTableTableAdapter.Fill(this.localPhoneDbDataSet1.PhoneListTable);
 
         }
+
+    private void BtnSortLN_Click(object sender, EventArgs e)
+    {
+      this.phoneListTableTableAdapter.SortByLastName(this.localPhoneDbDataSet1.PhoneListTable);
     }
+
+    private void BtnAge30_Click(object sender, EventArgs e)
+    {
+      this.phoneListTableTableAdapter.FillByAge30(this.localPhoneDbDataSet1.PhoneListTable);
+    }
+
+    private void BtnAvgAge_Click(object sender, EventArgs e)
+    {
+      MessageBox.Show($"The average age is: {this.phoneListTableTableAdapter.AverageAge()}");
+    }
+
+    private void BtnClear_Click(object sender, EventArgs e)
+    {
+      this.phoneListTableTableAdapter.Fill(this.localPhoneDbDataSet1.PhoneListTable);
+    }
+
+    private void BtnSearch_Click(object sender, EventArgs e)
+    {
+      this.phoneListTableTableAdapter.FillByFirstName(this.localPhoneDbDataSet1.PhoneListTable, TxtBoxFirstName.Text);
+    }
+  }
 }
